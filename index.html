@@ -11,6 +11,7 @@
   <link href="css/flat-ui.css" rel="stylesheet">
   <link href="css/demo.css" rel="stylesheet">
   
+  <!-- Loading JSON Highlighter -->
   <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -32,7 +33,7 @@
           
           <a class="navbar-brand" href="#">Flutur Blog Form</a>
         </div>
-        <div class="navbar-collapse collapse">
+        <!-- <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -55,41 +56,35 @@
             <li class="active"><a href="./">Static top</a></li>
             <li><a href="../navbar-fixed-top/">Fixed top</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div><!-->
       </div>
+    </div>
+
+    <div id="error-container" class="container" style="display: none">
+      
     </div>
 
     <div class="container">
 			<div class="row">
         
         <div class="col">
-          <div class="form-group has-error">
-            <textarea type="text" placeholder="Error" class="form-control"></textarea>
-          </div>
-        </div>
-        <div class="col">
           <div class="form-group">
-            <input type="text" id="title"value="" placeholder="Title" class="form-control" />
+            <input type="text" id="title"value="" placeholder="Title" required class="form-control" />
             <span class="input-icon fui-check-inverted"></span>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <input type="text" value="Disabled" disabled="disabled" class="form-control" />
           </div>
         </div>
     	</div> <!-- /row -->
     	<div class="row">
     		<div class="col">
           <div class="form-group">
-            <input id="image" type="url" placeholder="Image URL" class="form-control" />
+            <input id="image" type="url" placeholder="Image URL" required class="form-control" />
           </div>
         </div>
     	</div>
     	<div class="row">
     		<div class="col">
           <div class="form-group">
-            <textarea id="para1" placeholder="Paragraph 1" class="form-control"></textarea>
+            <textarea id="para1" placeholder="Paragraph 1" required class="form-control"></textarea>
           </div>
         </div>
     	</div>
@@ -110,18 +105,20 @@
     	<div class="row">
     		<div class="col">
           <div class="form-group">
-            <input id="author" type="text" placeholder="Author" class="form-control" />
+            <input id="author" type="text" placeholder="Author" required class="form-control" />
           </div>
         </div>
     	</div>
       <div class="row">
         <div class="col">
-          <button id="submit" class="btn btn-block btn-lg btn-success">Submit</button>
+          <div class="form-group">
+            <button id="submit" class="btn btn-block btn-lg btn-success">Submit</button>
+          </div>
         </div>
       </div>
 		</div>
 
-    <div class="container">
+    <div id="json-container" class="container" style="display: none">
       <pre >
         <code id="json"></code>
       </pre>
@@ -131,8 +128,12 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!-- Bootstrap 4 requires Popper.js -->
     <script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+
 
     <script src="index.js"></script>
 </body>

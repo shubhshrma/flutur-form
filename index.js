@@ -27,11 +27,29 @@ submit.addEventListener("click", e => {
 		errors.push("Author name can't be empty.");
 	}
 	console.log(errors);
+	let alerts;
 	if(errors.length){
 		
+		//ensure previous json output not present on page
+		document.getElementById("json-container").style.display = 'none';
+		alerts = ''	;
+		for(error of errors){
+			alerts += `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+	${error}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>`;
+		}
+		let error_container = document.getElementById("error-container");
+		error_container.style.display = 'block';
+		error_container.innerHTML = alerts;
 	}
 	else
 	{
+		//ensure previous validation errors not present on page
+		document.getElementById("error-container").style.display = 'none';
+
 		let json = {
 			"title": title,
 			"author": author,
@@ -39,8 +57,8 @@ submit.addEventListener("click", e => {
 			"para1": para1,
 			"para2": para2,
 			"para3": para3
-		}
-		console.log(document.getElementById("json"));
+		};
+		document.getElementById("json-container").style.display = 'block';
 		document.getElementById("json").innerHTML = JSON.stringify(json);
 	}
 })
