@@ -59,6 +59,6 @@ submit.addEventListener("click", e => {
 			"para3": para3
 		};
 		document.getElementById("json-container").style.display = 'block';
-		document.getElementById("json").innerHTML = JSON.stringify(json);
+		document.getElementById("json").innerHTML = JSON.stringify(json, null, 4);
 	}
 })
